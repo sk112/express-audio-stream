@@ -4,7 +4,7 @@ import firebase from './firebase.cjs'
 export function SocketAuthMiddleware(socket, next) {
 
     const token = socket.request._query.token
-    console.log('Socket Auth Middleware....')
+    // console.log('Socket Auth Middleware....', token)
 
     getAuth()
         .verifyIdToken(token)
@@ -13,7 +13,7 @@ export function SocketAuthMiddleware(socket, next) {
             next()
         })
         .catch(err => {
-            console.error('socket topken auth error: ', err)
+            console.error('socket token auth error: ', err)
             next(new Error('Socket Token Decode'))
         })
 }

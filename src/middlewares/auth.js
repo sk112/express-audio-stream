@@ -4,8 +4,8 @@ import { getAuth } from 'firebase-admin/auth'
 
 export function Authenticate(req, res, next) {
 
-    console.log('HEADERS: ', req.headers)
-    const token = req.headers['Authorization']
+    console.log('HEADERS: ', req.query)
+    const token = req.query['token']
 
     getAuth()
         .verifyIdToken(token)
