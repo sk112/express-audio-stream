@@ -1,4 +1,4 @@
-import { SocketAuthMiddleware } from './../lib/auth.js'
+import { SocketAuthMiddleware } from './../lib/firebase-admin.js'
 import { v4 as uuidv4 } from 'uuid'
 import { Server } from "socket.io";
 
